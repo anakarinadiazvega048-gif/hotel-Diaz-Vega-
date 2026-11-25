@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8edf4">
+  <meta name="description" content="Hotel Díaz Vega: una estadía encantadora. Conoce nuestras habitaciones y solicita tu reserva.">
+  <title>Hotel Díaz Vega | Una estadía de cuento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--rose:#c77d9d;--rose-dark:#98516f;--pink:#f8edf3;--lav:#eee8f7;--gold:#c6a66b;--ink:#342b38;--muted:#756b78;--cream:#fffaf7;--white:#fff;--shadow:0 18px 55px #56354b16}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.serif{font-family:'Playfair Display',serif}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topline{background:#49384c;color:#fff;text-align:center;padding:9px 15px;font-size:12px;letter-spacing:.12em}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{display:flex;align-items:center;gap:12px}.crest{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--rose-dark);font-size:22px;background:#fff}.brand-name{font:600 20px 'Playfair Display',serif;letter-spacing:.02em}.brand-sub{font-size:9px;letter-spacing:.24em;color:var(--muted);margin-top:3px}.navlinks{display:flex;align-items:center;gap:28px;font-size:13px;color:#625766}.navlinks a:hover{color:var(--rose-dark)}.btn{border:0;border-radius:999px;padding:13px 22px;background:var(--rose-dark);color:#fff;font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px #98516f35}.btn-outline{background:transparent;border:1px solid #bd8aa1;color:var(--rose-dark)}.btn-gold{background:#b18d55;color:white}
+    .hero{position:relative;overflow:hidden;min-height:610px;display:flex;align-items:center;background:linear-gradient(110deg,#f8edf4 0%,#f8edf4ed 48%,#eee8f7b8 100%)}.hero:before,.hero:after{content:'✧';position:absolute;color:#c6a66b66;font-size:170px}.hero:before{top:12px;right:8%}.hero:after{bottom:10px;left:48%;font-size:90px}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:45px;padding:70px 0;position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-dark);font-weight:700}.hero h1{font:600 clamp(44px,6vw,72px)/1.07 'Playfair Display',serif;margin:18px 0 20px;max-width:650px}.hero h1 em{color:var(--rose-dark);font-weight:500}.hero p{color:#6f6471;line-height:1.8;max-width:490px;font-size:15px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.hero-art{min-height:410px;position:relative;display:grid;place-items:center}.castle{width:min(100%,460px);aspect-ratio:1/1;position:relative;display:grid;place-items:center}.castle-frame{position:absolute;inset:8%;border:1px solid #c6a66b88;border-radius:48% 48% 18px 18px;background:linear-gradient(145deg,#ffffffaa,#ead9e9aa);box-shadow:var(--shadow);transform:rotate(3deg)}.castle-inner{position:relative;text-align:center;padding:35px}.castle-icon{font-size:clamp(120px,19vw,210px);filter:drop-shadow(0 15px 10px #6b4d6b24)}.castle-caption{font:500 23px 'Playfair Display',serif;color:#694a66;margin-top:-8px}.spark{position:absolute;color:var(--gold);font-size:27px}.s1{top:13%;left:12%}.s2{right:10%;top:25%}.s3{bottom:15%;left:16%}.s4{right:16%;bottom:12%}
+    .trust{background:#fff;padding:24px 0;border-bottom:1px solid #f0e6ec}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}.trust-item{padding:8px 18px;border-right:1px solid #eee3e9}.trust-item:last-child{border:0}.trust-item strong{display:block;font:600 24px 'Playfair Display',serif;color:var(--rose-dark)}.trust-item span{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+    section{padding:88px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 42px}.section-head h2{font:600 clamp(34px,4vw,48px)/1.12 'Playfair Display',serif;margin:12px 0}.section-head p{color:var(--muted);font-size:14px;line-height:1.8}.rooms{background:#fff}.room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.room-card{border:1px solid #eee3e9;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 10px 35px #56354b0a;transition:.25s}.room-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.room-visual{height:210px;display:grid;place-items:center;background:linear-gradient(135deg,#f8e9f0,#eee8f7);position:relative;overflow:hidden}.room-visual:before{content:'';position:absolute;width:190px;height:190px;border:1px solid #c6a66b77;border-radius:50%}.room-symbol{font-size:76px;position:relative;filter:drop-shadow(0 9px 8px #59384b24)}.room-content{padding:25px}.room-tag{font-size:10px;letter-spacing:.18em;color:var(--rose-dark);font-weight:700;text-transform:uppercase}.room-content h3{font:600 28px 'Playfair Display',serif;margin:9px 0}.room-content p{font-size:13px;line-height:1.7;color:var(--muted);min-height:45px}.room-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:16px;border-top:1px solid #f0e6ec}.room-foot span{font-size:11px;color:var(--muted)}
+    .amenities{background:linear-gradient(135deg,#f8edf4,#f1edf8)}.amenity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.amenity{background:#ffffffb8;border:1px solid #fff;border-radius:16px;padding:25px;text-align:center}.amenity .symbol{font-size:30px}.amenity h3{font:600 19px 'Playfair Display',serif;margin:12px 0 7px}.amenity p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}.notice{margin:25px auto 0;text-align:center;color:#796d78;font-size:11px;max-width:650px}
+    .booking{background:#fff}.booking-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}.booking-copy h2{font:600 45px/1.1 'Playfair Display',serif;margin:14px 0}.booking-copy p{color:var(--muted);line-height:1.8;font-size:14px}.booking-card{background:#fffafc;border:1px solid #f0e0e9;border-radius:22px;padding:30px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:700;color:#625766}.field input,.field select,.field textarea{border:1px solid #e8dce4;border-radius:10px;background:#fff;padding:13px;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:var(--rose)}.form-note{font-size:11px;color:var(--muted);line-height:1.5;margin:14px 0}.booking-card .btn{width:100%}
+    .concierge-band{padding:55px 0;background:#49384c;color:#fff}.concierge-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.concierge-inner h2{font:500 34px 'Playfair Display',serif;margin:8px 0}.concierge-inner p{color:#e4d8e2;font-size:13px;line-height:1.7;margin:0;max-width:600px}
+    footer{background:#302633;color:#e9dfe7;padding:45px 0 25px}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.footer-grid p{color:#bcaeba;font-size:12px;line-height:1.8;max-width:340px}.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:12px}.copyright{border-top:1px solid #ffffff1c;margin-top:30px;padding-top:18px;font-size:10px;color:#bcaeba}
+    .chat-launch{position:fixed;right:22px;bottom:22px;z-index:20;width:62px;height:62px;border:0;border-radius:50%;background:var(--rose-dark);color:#fff;box-shadow:0 12px 30px #59384b55;font-size:25px;cursor:pointer}.chat-panel{position:fixed;right:22px;bottom:96px;width:min(370px,calc(100vw - 32px));height:490px;max-height:calc(100vh - 125px);background:#fff;border:1px solid #eadde5;border-radius:20px;box-shadow:0 20px 70px #342b3840;z-index:21;display:none;flex-direction:column;overflow:hidden}.chat-panel.open{display:flex}.chat-head{background:#49384c;color:#fff;padding:18px;display:flex;justify-content:space-between;align-items:center}.chat-head strong{font:500 19px 'Playfair Display',serif}.chat-head small{display:block;color:#e4d8e2;font-size:10px;margin-top:4px}.chat-close{border:0;background:transparent;color:white;font-size:22px;cursor:pointer}.chat-messages{padding:16px;overflow:auto;flex:1;background:#fffafc}.bubble{max-width:88%;padding:11px 13px;border-radius:14px;margin:0 0 10px;font-size:12px;line-height:1.6;white-space:pre-wrap}.bot{background:#f1eaf4;border-bottom-left-radius:4px}.user{background:#98516f;color:#fff;margin-left:auto;border-bottom-right-radius:4px}.quick{display:flex;gap:7px;flex-wrap:wrap;padding:0 13px 12px;background:#fffafc}.quick button{border:1px solid #d9bdcc;border-radius:20px;background:#fff;color:#88516c;padding:7px 10px;font-size:10px;cursor:pointer}.chat-input{display:flex;padding:12px;border-top:1px solid #eee3e9;gap:8px}.chat-input input{min-width:0;flex:1;border:1px solid #e8dce4;border-radius:20px;padding:11px 13px;font-size:12px;outline:none}.chat-input button{border:0;border-radius:50%;width:40px;background:var(--rose-dark);color:white;cursor:pointer}
+    @media(max-width:800px){.navlinks{display:none}.hero-grid,.booking-wrap{grid-template-columns:1fr}.hero-grid{gap:10px;padding:55px 0}.hero-art{min-height:300px}.castle{max-width:340px}.room-grid{grid-template-columns:1fr 1fr}.booking-wrap{gap:25px}.concierge-inner{align-items:flex-start;flex-direction:column}.amenity-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:540px){.container{width:min(100% - 30px,1160px)}.nav{height:70px}.brand-name{font-size:17px}.hero{min-height:0}.hero-grid{padding:48px 0 30px}.hero h1{font-size:48px}.hero p{font-size:13px}.hero-art{min-height:260px}.trust-grid{grid-template-columns:1fr;gap:12px}.trust-item{border:0;border-bottom:1px solid #eee3e9;padding:10px}.trust-item:last-child{border:0}.trust-item strong{font-size:21px}section{padding:65px 0}.room-grid,.amenity-grid{grid-template-columns:1fr}.room-visual{height:180px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.booking-card{padding:20px}.footer-grid{flex-direction:column}.hero-actions .btn{width:100%}.section-head{margin-bottom:30px}}
+  </style>
+</head>
+<body>
+  <div class="topline">✧ UNA EXPERIENCIA ENCANTADORA TE ESPERA ✧</div>
+  <header class="container nav">
+    <a class="brand" href="#inicio" aria-label="Hotel Díaz Vega, inicio"><span class="crest">♕</span><span><span class="brand-name">Hotel Díaz Vega</span><span class="brand-sub">HOSPITALIDAD CON ENCANTO</span></span></a>
+    <nav class="navlinks"><a href="#habitaciones">Habitaciones</a><a href="#amenidades">Amenidades</a><a href="#reservas">Reservas</a><a href="#concierge">Concierge 24/7</a></nav>
+    <a class="btn btn-outline" href="#reservas">Reservar ahora</a>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Un destino, mil momentos mágicos</div>
+          <h1>Tu propia historia de <em>cuento</em> comienza aquí.</h1>
+          <p>Descubre Hotel Díaz Vega, un espacio creado para convertir cada estadía en un recuerdo especial. Elige tu habitación y déjanos acompañarte desde el primer momento.</p>
+          <div class="hero-actions"><a class="btn" href="#reservas">✧ Quiero reservar</a><a class="btn btn-outline" href="#habitaciones">Descubrir habitaciones</a></div>
+        </div>
+        <div class="hero-art" aria-label="Ilustración decorativa de castillo"><div class="castle"><div class="castle-frame"></div><span class="spark s1">✧</span><span class="spark s2">✦</span><span class="spark s3">✧</span><span class="spark s4">✦</span><div class="castle-inner"><div class="castle-icon">🏰</div><div class="castle-caption">Donde los sueños descansan</div></div></div></div>
+      </div>
+    </section>
+    <div class="trust"><div class="container trust-grid"><div class="trust-item"><strong>100</strong><span>Habitaciones disponibles en el hotel</span></div><div class="trust-item"><strong>24/7</strong><span>Concierge virtual en la web</span></div><div class="trust-item"><strong>3</strong><span>Tipos de habitación</span></div></div></div>
+    <section class="rooms" id="habitaciones">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Encuentra tu espacio ideal</div><h2 class="serif">Habitaciones para soñar</h2><p>Cada categoría está pensada para que encuentres el ambiente que mejor se adapta a tu viaje. Consulta disponibilidad y detalles al solicitar tu reserva.</p></div>
+        <div class="room-grid">
+          <article class="room-card"><div class="room-visual"><div class="room-symbol">🛏️</div></div><div class="room-content"><div class="room-tag">Categoría NK1</div><h3>NK1</h3><p>Una opción acogedora para disfrutar una estadía especial.</p><div class="room-foot"><span>Consultar capacidad y tarifa</span><a class="btn btn-outline" href="#reservas" data-room="NK1">Consultar</a></div></div></article>
+          <article class="room-card"><div class="room-visual"><div class="room-symbol">🌷</div></div><div class="room-content"><div class="room-tag">Categoría NQQ</div><h3>NQQ</h3><p>Un espacio pensado para descansar y disfrutar cada momento.</p><div class="room-foot"><span>Consultar capacidad y tarifa</span><a class="btn btn-outline" href="#reservas" data-room="NQQ">Consultar</a></div></div></article>
+          <article class="room-card"><div class="room-visual"><div class="room-symbol">👑</div></div><div class="room-content"><div class="room-tag">Experiencia especial</div><h3>Suite</h3><p>Una alternativa especial para quienes desean una estadía diferente.</p><div class="room-foot"><span>Consultar capacidad y tarifa</span><a class="btn btn-outline" href="#reservas" data-room="Suite">Consultar</a></div></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="amenities" id="amenidades">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Pequeños detalles, grandes recuerdos</div><h2 class="serif">Amenidades del hotel</h2><p>Estamos preparando este espacio para mostrarte todos los servicios y espacios que harán especial tu visita.</p></div>
+        <div class="amenity-grid">
+          <article class="amenity"><div class="symbol">✨</div><h3>Experiencia encantadora</h3><p>Una bienvenida especial y una experiencia con detalles de cuento.</p></article>
+          <article class="amenity"><div class="symbol">🛎️</div><h3>Atención al huésped</h3><p>Orientación para resolver tus dudas antes y durante tu reserva.</p></article>
+          <article class="amenity"><div class="symbol">💬</div><h3>Concierge virtual</h3><p>Un asistente en línea para ayudarte a encontrar la información que necesitas.</p></article>
+        </div>
+        <p class="notice">Las amenidades físicas, servicios, horarios y disponibilidad se actualizarán con la información oficial del hotel.</p>
+      </div>
+    </section>
+    <section class="booking" id="reservas">
+      <div class="container booking-wrap">
+        <div class="booking-copy"><div class="eyebrow">Tu próxima escapada comienza aquí</div><h2>Haz tu solicitud de reserva</h2><p>Cuéntanos cuándo deseas visitarnos y qué habitación te interesa. Prepararemos tu mensaje para que puedas enviarlo directamente por WhatsApp.</p><p><strong>Importante:</strong> la solicitud no confirma la reserva. El equipo del hotel deberá validar disponibilidad y tarifa.</p></div>
+        <form class="booking-card" id="bookingForm">
+          <div class="form-grid">
+            <div class="field"><label for="guestName">Nombre completo</label><input id="guestName" name="guestName" required placeholder="Tu nombre"></div>
+            <div class="field"><label for="guestPhone">Tu teléfono</label><input id="guestPhone" name="guestPhone" required placeholder="Número de contacto"></div>
+            <div class="field"><label for="checkin">Fecha de llegada</label><input id="checkin" name="checkin" type="date" required></div>
+            <div class="field"><label for="checkout">Fecha de salida</label><input id="checkout" name="checkout" type="date" required></div>
+            <div class="field"><label for="roomType">Tipo de habitación</label><select id="roomType" name="roomType" required><option value="">Selecciona una opción</option><option>NK1</option><option>NQQ</option><option>Suite</option></select></div>
+            <div class="field"><label for="guests">Número de huéspedes</label><input id="guests" name="guests" type="number" min="1" value="1" required></div>
+            <div class="field full"><label for="extra">¿Alguna solicitud especial? (opcional)</label><textarea id="extra" name="extra" rows="2" placeholder="Cuéntanos si tienes alguna solicitud..."></textarea></div>
+          </div>
+          <p class="form-note" id="whatsappNote">Al continuar, se abrirá WhatsApp con los datos de tu solicitud. La reserva queda pendiente de confirmación.</p>
+          <button class="btn" type="submit">Enviar solicitud por WhatsApp ↗</button>
+        </form>
+      </div>
+    </section>
+    <section class="concierge-band" id="concierge"><div class="container concierge-inner"><div><div class="eyebrow" style="color:#e8cba0">Siempre a tu disposición</div><h2>Tu concierge, día y noche.</h2><p>¿Tienes preguntas sobre habitaciones, reservas o servicios? Nuestro concierge virtual puede orientarte en cualquier momento.</p></div><button class="btn btn-gold" id="openChatCta">Hablar con concierge ✧</button></div></section>
+  </main>
+  <footer><div class="container"><div class="footer-grid"><div><a class="brand" href="#inicio"><span class="crest">♕</span><span><span class="brand-name" style="color:#fff">Hotel Díaz Vega</span><span class="brand-sub" style="color:#c9b7c7">HOSPITALIDAD CON ENCANTO</span></span></a><p>Un lugar para crear recuerdos inolvidables. Estamos felices de acompañarte en tu próxima estadía.</p></div><div class="footer-links"><a href="#habitaciones">Habitaciones</a><a href="#amenidades">Amenidades</a><a href="#reservas">Reservas</a><a href="#concierge">Concierge</a></div></div><div class="copyright">© <span id="year"></span> Hotel Díaz Vega. Todos los derechos reservados.</div></div></footer>
+  <button class="chat-launch" id="chatLaunch" aria-label="Abrir concierge virtual">💬</button>
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Concierge virtual">
+    <div class="chat-head"><div><strong>Concierge Díaz Vega</strong><small>✦ Asistente virtual · Disponible 24/7</small></div><button class="chat-close" id="chatClose" aria-label="Cerrar chat">×</button></div>
+    <div class="chat-messages" id="chatMessages"><div class="bubble bot">¡Hola! ✨ Bienvenido/a a Hotel Díaz Vega. Soy tu concierge virtual. ¿En qué puedo ayudarte hoy?</div></div>
+    <div class="quick"><button data-question="¿Qué habitaciones tienen?">Habitaciones</button><button data-question="¿Cómo puedo reservar?">Reservar</button><button data-question="¿Qué amenidades tienen?">Amenidades</button><button data-question="Quiero hablar con una persona">Asesor</button></div>
+    <form class="chat-input" id="chatForm"><input id="chatText" placeholder="Escribe tu pregunta..." autocomplete="off" aria-label="Escribe tu pregunta"><button type="submit" aria-label="Enviar mensaje">➤</button></form>
+  </div>
+  <script>
+    // CONFIGURACIÓN DEL HOTEL: reemplaza el número por el WhatsApp oficial, con indicativo de país y sin + ni espacios.
+    const HOTEL_CONFIG = { whatsappNumber: "" };
+    const $ = (selector) => document.querySelector(selector);
+    $("#year").textContent = new Date().getFullYear();
+    const chatPanel = $("#chatPanel"), messages = $("#chatMessages");
+    function openChat(){chatPanel.classList.add("open");$("#chatText").focus()}
+    function closeChat(){chatPanel.classList.remove("open")}
+    $("#chatLaunch").addEventListener("click",openChat);$("#openChatCta").addEventListener("click",openChat);$("#chatClose").addEventListener("click",closeChat);
+    function addMessage(text,who){const node=document.createElement("div");node.className="bubble "+who;node.textContent=text;messages.appendChild(node);messages.scrollTop=messages.scrollHeight}
+    function conciergeReply(question){
+      const q=question.toLowerCase();
+      if(/habitaci|suite|nk1|nqq|cuarto/.test(q))return "Contamos con tres categorías: NK1, NQQ y Suite. Para conocer tarifas, capacidad y disponibilidad, déjanos tus fechas en el formulario de reservas y el equipo del hotel podrá confirmarlas.";
+      if(/reserv|apartar|disponib|fecha|precio|tarifa|costo/.test(q))return "¡Con gusto te ayudamos! Completa el formulario de reservas en la sección «Reservas». Tu solicitud se enviará por WhatsApp para que el hotel valide disponibilidad y tarifas.";
+      if(/amenidad|servicio|piscina|wifi|internet|restaurante|parqueadero/.test(q))return "Estamos actualizando el catálogo de amenidades oficiales del Hotel Díaz Vega. Para evitar darte información incorrecta, puedo recomendarte contactar directamente al equipo del hotel.";
+      if(/persona|asesor|humano|recepci|contact/.test(q))return HOTEL_CONFIG.whatsappNumber ? "Puedes continuar la conversación con nuestro equipo por WhatsApp." : "El contacto directo por WhatsApp estará disponible cuando el hotel configure su número oficial en la página.";
+      if(/ubicaci|direcci|llegar|mapa/.test(q))return "La dirección y las indicaciones del hotel se agregarán cuando tengamos confirmada la ubicación oficial.";
+      if(/gracias|thank/.test(q))return "¡Con mucho gusto! ✨ Estamos aquí para ayudarte.";
+      return "Gracias por escribirnos. Puedo orientarte sobre las categorías NK1, NQQ y Suite, el proceso de reservas y la información del hotel. Si necesitas confirmar un dato específico, el equipo del hotel deberá validarlo.";
+    }
+    function sendChat(text){const clean=text.trim();if(!clean)return;addMessage(clean,"user");$("#chatText").value="";setTimeout(()=>addMessage(conciergeReply(clean),"bot"),250)}
+    $("#chatForm").addEventListener("submit",e=>{e.preventDefault();sendChat($("#chatText").value)});
+    document.querySelectorAll(".quick button").forEach(btn=>btn.addEventListener("click",()=>sendChat(btn.dataset.question)));
+    document.querySelectorAll("[data-room]").forEach(link=>link.addEventListener("click",()=>{$("#roomType").value=link.dataset.room}));
+    $("#checkin").min=new Date().toISOString().slice(0,10);
+    $("#checkin").addEventListener("change",()=>{$("#checkout").min=$("#checkin").value;if($("#checkout").value && $("#checkout").value<=$("#checkin").value)$("#checkout").value=""});
+    $("#bookingForm").addEventListener("submit",e=>{
+      e.preventDefault();
+      const data=Object.fromEntries(new FormData(e.currentTarget).entries());
+      if(data.checkout<=data.checkin){alert("La fecha de salida debe ser posterior a la fecha de llegada.");return}
+      const msg=["Hola, deseo solicitar una reserva en Hotel Díaz Vega.","","Nombre: "+data.guestName,"Teléfono: "+data.guestPhone,"Llegada: "+data.checkin,"Salida: "+data.checkout,"Habitación: "+data.roomType,"Huéspedes: "+data.guests,"Solicitud especial: "+(data.extra||"Ninguna"),"","Entiendo que la solicitud está pendiente de confirmación."].join("\n");
+      if(!/^\d{10,15}$/.test(HOTEL_CONFIG.whatsappNumber)){alert("El formulario está listo. Para activar el envío, el hotel debe configurar su número oficial de WhatsApp en HOTEL_CONFIG, al final del archivo index.html.");return}
+      window.open("https://wa.me/"+HOTEL_CONFIG.whatsappNumber+"?text="+encodeURIComponent(msg),"_blank","noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
