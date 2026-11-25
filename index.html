@@ -44,7 +44,7 @@
         <div class="hero-art" aria-label="Ilustración decorativa de castillo"><div class="castle"><div class="castle-frame"></div><span class="spark s1">✧</span><span class="spark s2">✦</span><span class="spark s3">✧</span><span class="spark s4">✦</span><div class="castle-inner"><div class="castle-icon">🏰</div><div class="castle-caption">Donde los sueños descansan</div></div></div></div>
       </div>
     </section>
-    <div class="trust"><div class="container trust-grid"><div class="trust-item"><strong>100</strong><span>Habitaciones disponibles en el hotel</span></div><div class="trust-item"><strong>24/7</strong><span>Concierge virtual en la web</span></div><div class="trust-item"><strong>3</strong><span>Tipos de habitación</span></div></div></div>
+    <div class="trust"><div class="container trust-grid"><div class="trust-item"><strong>100</strong><span>Habitaciones en total en el hotel</span></div><div class="trust-item"><strong>24/7</strong><span>Concierge virtual en la web</span></div><div class="trust-item"><strong>3</strong><span>Tipos de habitación</span></div></div></div>
     <section class="rooms" id="habitaciones">
       <div class="container">
         <div class="section-head"><div class="eyebrow">Encuentra tu espacio ideal</div><h2 class="serif">Habitaciones para soñar</h2><p>Cada categoría está pensada para que encuentres el ambiente que mejor se adapta a tu viaje. Consulta disponibilidad y detalles al solicitar tu reserva.</p></div>
@@ -57,7 +57,7 @@
     </section>
     <section class="amenities" id="amenidades">
       <div class="container">
-        <div class="section-head"><div class="eyebrow">Pequeños detalles, grandes recuerdos</div><h2 class="serif">Amenidades del hotel</h2><p>Estamos preparando este espacio para mostrarte todos los servicios y espacios que harán especial tu visita.</p></div>
+        <div class="section-head"><div class="eyebrow">Pequeños detalles, grandes recuerdos</div><h2 class="serif">Amenidades del hotel</h2><p>Descubre los detalles que harán especial tu visita. El catálogo se completará con los servicios confirmados por el hotel.</p></div>
         <div class="amenity-grid">
           <article class="amenity"><div class="symbol">✨</div><h3>Experiencia encantadora</h3><p>Una bienvenida especial y una experiencia con detalles de cuento.</p></article>
           <article class="amenity"><div class="symbol">🛎️</div><h3>Atención al huésped</h3><p>Orientación para resolver tus dudas antes y durante tu reserva.</p></article>
@@ -96,7 +96,7 @@
   </div>
   <script>
     // CONFIGURACIÓN DEL HOTEL: reemplaza el número por el WhatsApp oficial, con indicativo de país y sin + ni espacios.
-    const HOTEL_CONFIG = { whatsappNumber: "" };
+    const HOTEL_CONFIG = { whatsappNumber: "", conciergeEndpoint: "/api/concierge" };
     const $ = (selector) => document.querySelector(selector);
     $("#year").textContent = new Date().getFullYear();
     const chatPanel = $("#chatPanel"), messages = $("#chatMessages");
@@ -108,17 +108,18 @@
       const q=question.toLowerCase();
       if(/habitaci|suite|nk1|nqq|cuarto/.test(q))return "Contamos con tres categorías: NK1, NQQ y Suite. Para conocer tarifas, capacidad y disponibilidad, déjanos tus fechas en el formulario de reservas y el equipo del hotel podrá confirmarlas.";
       if(/reserv|apartar|disponib|fecha|precio|tarifa|costo/.test(q))return "¡Con gusto te ayudamos! Completa el formulario de reservas en la sección «Reservas». Tu solicitud se enviará por WhatsApp para que el hotel valide disponibilidad y tarifas.";
-      if(/amenidad|servicio|piscina|wifi|internet|restaurante|parqueadero/.test(q))return "Estamos actualizando el catálogo de amenidades oficiales del Hotel Díaz Vega. Para evitar darte información incorrecta, puedo recomendarte contactar directamente al equipo del hotel.";
+      if(/amenidad|servicio|piscina|wifi|internet|restaurante|parqueadero/.test(q))return "La lista oficial de amenidades aún está pendiente de confirmación. No quiero darte información incorrecta: el equipo del hotel podrá confirmarte los servicios disponibles.";
       if(/persona|asesor|humano|recepci|contact/.test(q))return HOTEL_CONFIG.whatsappNumber ? "Puedes continuar la conversación con nuestro equipo por WhatsApp." : "El contacto directo por WhatsApp estará disponible cuando el hotel configure su número oficial en la página.";
       if(/ubicaci|direcci|llegar|mapa/.test(q))return "La dirección y las indicaciones del hotel se agregarán cuando tengamos confirmada la ubicación oficial.";
       if(/gracias|thank/.test(q))return "¡Con mucho gusto! ✨ Estamos aquí para ayudarte.";
       return "Gracias por escribirnos. Puedo orientarte sobre las categorías NK1, NQQ y Suite, el proceso de reservas y la información del hotel. Si necesitas confirmar un dato específico, el equipo del hotel deberá validarlo.";
     }
-    function sendChat(text){const clean=text.trim();if(!clean)return;addMessage(clean,"user");$("#chatText").value="";setTimeout(()=>addMessage(conciergeReply(clean),"bot"),250)}
+    async function sendChat(text){const clean=text.trim();if(!clean)return;addMessage(clean,"user");$("#chatText").value="";const pending=document.createElement("div");pending.className="bubble bot";pending.textContent="Estoy revisando tu consulta…";messages.appendChild(pending);messages.scrollTop=messages.scrollHeight;try{const response=await fetch(HOTEL_CONFIG.conciergeEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:clean})});if(!response.ok)throw new Error("Concierge no configurado");const data=await response.json();pending.textContent=data.reply||conciergeReply(clean)}catch(error){pending.textContent=conciergeReply(clean)+"\n\n(Respuesta informativa local. El concierge con IA se activa al desplegar el servicio y configurar su clave.)"}messages.scrollTop=messages.scrollHeight}
     $("#chatForm").addEventListener("submit",e=>{e.preventDefault();sendChat($("#chatText").value)});
     document.querySelectorAll(".quick button").forEach(btn=>btn.addEventListener("click",()=>sendChat(btn.dataset.question)));
     document.querySelectorAll("[data-room]").forEach(link=>link.addEventListener("click",()=>{$("#roomType").value=link.dataset.room}));
-    $("#checkin").min=new Date().toISOString().slice(0,10);
+    const todayLocal=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+    $("#checkin").min=todayLocal();
     $("#checkin").addEventListener("change",()=>{$("#checkout").min=$("#checkin").value;if($("#checkout").value && $("#checkout").value<=$("#checkin").value)$("#checkout").value=""});
     $("#bookingForm").addEventListener("submit",e=>{
       e.preventDefault();
